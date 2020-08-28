@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-  cout << "Hello World. :-)\n" << endl;
+  cout << "Hello World. :-)" << endl;
 
   cout << "\n*** Start Extra Credit ***\n" << endl;
 
