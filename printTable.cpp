@@ -1,6 +1,6 @@
 /*
 * Author: Xander Gennarelli
-* Assignment Title: Hello World
+* Assignment Title: Print a Table
 * Assignment Description: A program to print a table of squared and
 *                         cubed numbers to the screen.
 * Due Date: 8/31/2020
