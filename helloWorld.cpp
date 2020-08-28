@@ -15,11 +15,11 @@ int main()
 {
   cout << "Hello World. :-)\n" << endl;
 
-  cout << "*** Start Extra Credit ***\n" << endl;
+  cout << "\n*** Start Extra Credit ***\n" << endl;
 
   cout << ")-: .dlroW olleH\n" << endl;
 
-  cout << "*** End Extra Credit ***" << endl;
+  cout << "\n*** End Extra Credit ***" << endl;
 
   return 0;
 }
