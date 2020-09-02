@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 double approximate(double loopNum){
@@ -28,8 +29,8 @@ int main(){
   cout << "PI = " << approximate(7) << endl;
 
   cout << "\n*** Start Extra Credit ***\n" << endl;
-
-  cout << "PI = " << static_cast<double>(static_cast<int>(approximate(152) * 100 + 0.5)) / 100.0 << endl;
+  double pi = round(approximate(152) * 100.0) / 100.0;
+  cout << "PI = " << pi << endl;
 
   cout << "\n*** End Extra Credit ***" << endl;
   return 0;
