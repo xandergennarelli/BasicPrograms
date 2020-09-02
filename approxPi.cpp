@@ -12,15 +12,15 @@
 using namespace std;
 
 double approximate(double loopNum){
-  double out = 0;
-  double sign = 1;
+  double out = 0.0;
+  double sign = 1.0;
 
-  for(double i = 1.0; i < loopNum * 2; i += 2){
-    out += (1/i) * sign;
-    sign *= -1;
+  for(double i = 1.0; i < loopNum * 2.0; i += 2.0){
+    out += (1.0/i) * sign;
+    sign *= -1.0;
   }
 
-  return out * 4;
+  return out * 4.0;
 }
 
 int main(){
