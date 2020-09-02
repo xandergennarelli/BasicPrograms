@@ -5,11 +5,10 @@
 *                         varying degrees of accuracy.
 * Due Date: 9/4/2020
 * Date Created: 9/1/2020
-* Date Last Modified: 9/1/2020
+* Date Last Modified: 9/2/2020
 */
 
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 double approximate(int loopNum){
@@ -30,7 +29,7 @@ int main(){
 
   cout << "\n*** Start Extra Credit ***\n" << endl;
 
-  cout << "PI = " << round((approximate(152)) * 100) / 100 << endl;
+  cout << "PI = " << ((int)(approximate(152) * 100 + 0.5)) / 100.0 << endl;
 
   cout << "\n*** End Extra Credit ***" << endl;
   return 0;
