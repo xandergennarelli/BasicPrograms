@@ -5,11 +5,11 @@
 *                         varying degrees of accuracy.
 * Due Date: 9/4/2020
 * Date Created: 9/1/2020
-* Date Last Modified: 9/2/2020
+* Date Last Modified: 9/4/2020
 */
 
 #include <iostream>
-#include <cmath>
+#include <iomanip>
 using namespace std;
 
 double approximate(double loopNum){
@@ -29,8 +29,8 @@ int main(){
   cout << "PI = " << approximate(7) << endl;
 
   cout << "\n*** Start Extra Credit ***\n" << endl;
-  double pi = round(approximate(152) * 100.0) / 100.0;
-  cout << "PI = " << pi << endl;
+
+  cout << "PI = " << fixed << setprecision(2) << approximate(152) << endl;
 
   cout << "\n*** End Extra Credit ***" << endl;
   return 0;
