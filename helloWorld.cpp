@@ -17,7 +17,7 @@ int main()
 
   cout << "\n*** Start Extra Credit ***\n" << endl;
 
-  cout << ")-: .dlroW olleH\n" << endl;
+  cout << ")-: .dlroW olleH" << endl;
 
   cout << "\n*** End Extra Credit ***" << endl;
 
