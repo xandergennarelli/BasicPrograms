@@ -2,17 +2,37 @@
 * Author: Xander Gennarelli
 * Assignment Title: Quadratic Formula
 * Assignment Description: A program that, given inputs of a, b, and c, will
-*                         print both roots of the quadratic.
+*                         print the roots of the quadratic or "NO REAL ROOTS".
 * Due Date: 9/14/2020
 * Date Created: 9/12/2020
 * Date Last Modified: 9/12/2020
 */
 /*
 * Data Abstraction:
+*           Creates a, b, and c to hold their counter-parts in the equation.
+*           Creates d  and numRoots to hold the dicriminant and the
+*                 number of roots.
+*           Creates userIn to hold the users exact input.
+*           Creates index as a placeholder for extracting values from userIn.
+*           Creates root1 and root2 to hold the roots of the quadratic.
 * Input:
+*           User inputs the values a, b, and c delimited by a comma and a space.
+*           The values of a, b, and c are extracted from the string and placed
+*                 in their respective variables.
 * Process:
+*           The discriminant is calculated and used to find the number of roots.
+*           The roots are calculated if they exist.
+*           The roots are reordered, if necessary, to ensure root1 is less than
+*                 root2.
 * Output:
+*           Asks the user to input a, b, and c.
+*           Prints the roots if they exist or "NO REAL ROOTS" if they are not
+*                 real. If the roots are identical, only one is printed.
 * Assumptions:
+*           It is assummed that the user will correctly input data.
+*           It is assummed that the user only wants to solve one equation at a
+*                 time.
+*           It is assummed that the user only wants real solutions.
 */
 
 #include <iostream>
