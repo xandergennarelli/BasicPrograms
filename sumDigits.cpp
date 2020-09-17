@@ -2,7 +2,7 @@
 * Author: Xander Gennarelli
 * Assignment Title: Sum The Digits In An Integer
 * Assignment Description: A program that will sum the integers of a three
-*                               digit integer and output that sum.
+*                         digit integer and output that sum.
 * Due Date: 9/9/2020
 * Date Created: 9/2/2020
 * Date Last Modified: 9/8/2020
