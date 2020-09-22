@@ -1,13 +1,16 @@
 /*
 * Author: Xander Gennarelli
-* Assignment Title:
-* Assignment Description:
-* Due Date:
-* Date Created:
-* Date Last Modified:
+* Assignment Title: Min Max Sum Count Average
+* Assignment Description: A program that reads an unknown number of integers
+*                               from a file and calculates the min, max, sum,
+*                               count, and average of those values.
+* Due Date: 9/23/2020
+* Date Created: 9/21/2020
+* Date Last Modified: 9/22/2020
 */
 /*
 * Data Abstraction:
+*             
 * Input:
 * Process:
 * Output:
