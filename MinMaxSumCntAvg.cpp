@@ -60,14 +60,14 @@ int main() {
     do {
       cout << "Enter Data File Name: ";
       cin >> fileName;
+      //Echo Print
+      cout << fileName << endl;
 
       inData.open(fileName.c_str());
       if(!inData) {
-          cout << "ERROR: File not open - " << fileName << "\n" << endl;
+          cout << "ERROR: File not open." << endl;
       }
     }while(!inData);
-    //Echo Print
-    cout << fileName << endl;
 
     //PROCESS
     while(inData >> n) { //input read each loop
@@ -92,7 +92,7 @@ int main() {
     cout << "Max = " << max << endl;
     cout << "Sum = " << sum << endl;
     cout << "Count = " << count << endl;
-    cout << "Average = " << average << endl;
+    cout << "Average = " << fixed << setprecision(3) << average << endl;
 
     cout << "\n*** Start Extra Credit ***\n" << endl;
 
@@ -100,7 +100,7 @@ int main() {
     midrange = static_cast<double>(min + max) / 2.0;
 
     cout << "Range = " << range << endl;
-    cout << "Midrange = " << midrange << endl;
+    cout << "Midrange = " << fixed << setprecision(3) << midrange << endl;
 
     cout << "\n*** End Extra Credit ***" << endl;
     return 0;
