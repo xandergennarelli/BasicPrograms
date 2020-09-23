@@ -65,7 +65,7 @@ int main() {
 
     inData.open(fileName.c_str());
     if(!inData) {
-        cout << "ERROR: File not open." << endl;
+      cout << "ERROR: File not open." << endl;
     }
   }while(!inData);
 
