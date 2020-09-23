@@ -1,20 +1,50 @@
 #include <iostream>
+#include <string>
 #include <fstream>
-
+#include <cstdlib>
 using namespace std;
 
-int main(){
-  ofstream outputFile;
-  ifstream inputFile;
+int main()
+{
+    string fileName;
+    ifstream inData;
+    ofstream outputFile;
+    int sum = 0, count = 0, n;
+    double average;
 
-  inputFile.open("name of file");
-  if(!inputFile){
-    cout << "Error: File Not Open";
-    exit(1);
-  }
+    //cout << "Enter File Name: ";
 
-  outputFile << "Hello world!" << endl;
+    //cin >> fileName;
 
-  outputFile.close();
-  return 0;
+    //inData.open(fileName.c_str());
+    inData.open("myData.txt");
+
+    //This only works in C++ 11.
+    //Older looks like:
+    //inData.open(fileName.c_str())
+    //Always test the connection of this file opening.
+
+    //Files always hold true if open.
+    if(!inData) {
+        cout << "ERROR: File not open - " << fileName << endl;
+        exit(1);
+    }
+
+    //Use this way of reading files.
+
+    while(inData >> n) {
+        count++;
+        sum += n;
+    }
+    inData.close();
+
+    outputFile << "Hello world!" << endl;
+    outputFile.close();
+
+    average = static_cast<double>(sum) / count;
+
+    cout << "Count   = " << count << endl;
+    cout << "Sum     = " << sum << endl;
+    cout << "Average = " << average << endl;
+    return 0;
 }

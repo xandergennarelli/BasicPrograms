@@ -1,21 +1,47 @@
 /*
 * Author: Xander Gennarelli
 * Assignment Title: Min Max Sum Count Average
-* Assignment Description: A program that reads an unknown number of integers
-*                               from a file and calculates the min, max, sum,
-*                               count, and average of those values.
+* Assignment Description:
+*           A program that reads an unknown number of integers from a file and
+*                   calculates the min, max, sum, count, and average of those
+*                   values.
 * Due Date: 9/23/2020
 * Date Created: 9/21/2020
-* Date Last Modified: 9/22/2020
+* Date Last Modified: 9/23/2020
 */
 /*
 * Data Abstraction:
-*             
+*           Creates the string fileName to hold the user input file name.
+*           Creates the input filestream inData.
+*           Creates variables sum, count, min, max, range to hold their given
+*                 integer values.
+*           Creates the values average and midrange to hold double values.
 * Input:
+*           The user enters a file name.
+*           The file stream is opened.
+*           An error is printed if the file stream fails to open.
+*           The file is read one int at a time.
+*           The file stream is closed.
 * Process:
+*           Count is increased each time input is read.
+*           Each new data point is added to sum.
+*           Min and max are found.
+*           Average, range, and midrange is found.
 * Output:
+*           The user is asked for a file name.
+*           Min, max, sum, count, and average are printed.
+*           Start extra credit is printed.
+*           Range and midrange are printed.
+*           End extra credit is printed.
 * Assumptions:
+*           It is assumed that the user will enter the file name of a
+*                 correctly formated data file.
+*           It is assumed that the user only wants answers based on integer
+*                 data.
+*           It is assumed that no value will be outside of the range of
+*                 possible int values.
 */
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -23,11 +49,13 @@
 using namespace std;
 
 int main() {
+    //DATA ABSTRACTION
     string fileName;
     ifstream inData;
     int sum = 0, count = 0, n, min, max, range;
     double average, midrange;
 
+    //INPUT
     do {
       cout << "Enter File Name: ";
       cin >> fileName;
@@ -38,7 +66,8 @@ int main() {
       }
     }while(!inData);
 
-    while(inData >> n) {
+    //PROCESS
+    while(inData >> n) { //input read each loop
         count++;
         sum += n;
 
@@ -52,7 +81,7 @@ int main() {
           max = n;
         }
     }
-    inData.close();
+    inData.close(); //input file stream closed
 
     average = static_cast<double>(sum) / count;
 
