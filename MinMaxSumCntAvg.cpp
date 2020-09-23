@@ -71,18 +71,18 @@ int main() {
 
   //PROCESS
   while(inData >> n) { //input read each loop
-      count++;
-      sum += n;
+    count++;
+    sum += n;
 
-      if(count == 1){
-        min = max = n;
-      }
-      if(min > n){
-        min = n;
-      }
-      if(max < n){
-        max = n;
-      }
+    if(count == 1){
+      min = max = n;
+    }
+    if(min > n){
+      min = n;
+    }
+    if(max < n){
+      max = n;
+    }
   }
   inData.close(); //input file stream closed
 
