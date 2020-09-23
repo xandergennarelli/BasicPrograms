@@ -29,6 +29,7 @@
 *           Average, range, and midrange is found.
 * Output:
 *           The user is asked for a file name.
+*           The file name is echo printed.
 *           Min, max, sum, count, and average are printed.
 *           Start extra credit is printed.
 *           Range and midrange are printed.
@@ -57,7 +58,7 @@ int main() {
 
     //INPUT
     do {
-      cout << "Enter File Name: ";
+      cout << "Enter Data File Name: ";
       cin >> fileName;
 
       inData.open(fileName.c_str());
@@ -65,6 +66,8 @@ int main() {
           cout << "ERROR: File not open - " << fileName << "\n" << endl;
       }
     }while(!inData);
+    //Echo Print
+    cout << fileName << endl;
 
     //PROCESS
     while(inData >> n) { //input read each loop
@@ -97,7 +100,7 @@ int main() {
     midrange = static_cast<double>(min + max) / 2.0;
 
     cout << "Range = " << range << endl;
-    cout << "Midrange = " << average << endl;
+    cout << "Midrange = " << midrange << endl;
 
     cout << "\n*** End Extra Credit ***" << endl;
     return 0;
