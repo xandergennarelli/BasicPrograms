@@ -50,58 +50,58 @@
 using namespace std;
 
 int main() {
-    //DATA ABSTRACTION
-    string fileName;
-    ifstream inData;
-    int sum = 0, count = 0, n, min, max, range;
-    double average, midrange;
+  //DATA ABSTRACTION
+  string fileName;
+  ifstream inData;
+  int sum = 0, count = 0, n, min, max, range;
+  double average, midrange;
 
-    //INPUT
-    do {
-      cout << "Enter Data File Name: ";
-      cin >> fileName;
-      //Echo Print
-      cout << fileName << endl;
+  //INPUT
+  do {
+    cout << "Enter Data File Name: ";
+    cin >> fileName;
+    //Echo Print
+    cout << fileName << endl;
 
-      inData.open(fileName.c_str());
-      if(!inData) {
-          cout << "ERROR: File not open." << endl;
-      }
-    }while(!inData);
-
-    //PROCESS
-    while(inData >> n) { //input read each loop
-        count++;
-        sum += n;
-
-        if(count == 1){
-          min = max = n;
-        }
-        if(min > n){
-          min = n;
-        }
-        if(max < n){
-          max = n;
-        }
+    inData.open(fileName.c_str());
+    if(!inData) {
+        cout << "ERROR: File not open." << endl;
     }
-    inData.close(); //input file stream closed
+  }while(!inData);
 
-    average = static_cast<double>(sum) / count;
+  //PROCESS
+  while(inData >> n) { //input read each loop
+      count++;
+      sum += n;
 
-    cout << "Min = " << min << endl;
-    cout << "Max = " << max << endl;
-    cout << "Sum = " << sum << endl;
-    cout << "Count = " << count << endl;
-    cout << "Average = " << fixed << setprecision(3) << average << endl;
+      if(count == 1){
+        min = max = n;
+      }
+      if(min > n){
+        min = n;
+      }
+      if(max < n){
+        max = n;
+      }
+  }
+  inData.close(); //input file stream closed
 
-    cout << "\n*** Start Extra Credit ***\n" << endl;
+  average = static_cast<double>(sum) / count;
 
-    range = max - min;
-    midrange = static_cast<double>(min + max) / 2.0;
+  cout << "Min = " << min << endl;
+  cout << "Max = " << max << endl;
+  cout << "Sum = " << sum << endl;
+  cout << "Count = " << count << endl;
+  cout << "Average = " << fixed << setprecision(3) << average << endl;
 
-    cout << "Range = " << range << endl;
-    cout << "Midrange = " << fixed << setprecision(3) << midrange << endl;
+  cout << "\n*** Start Extra Credit ***\n" << endl;
 
-    cout << "\n*** End Extra Credit ***" << endl;
-    return 0;
+  range = max - min;
+  midrange = static_cast<double>(min + max) / 2.0;
+
+  cout << "Range = " << range << endl;
+  cout << "Midrange = " << fixed << setprecision(3) << midrange << endl;
+
+  cout << "\n*** End Extra Credit ***" << endl;
+  return 0;
 }
