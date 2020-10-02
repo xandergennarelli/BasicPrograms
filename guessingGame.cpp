@@ -21,7 +21,7 @@
 *           User inputs two integers.
 *           User inputs a guess number until they are correct.
 * Process:
-*           The user input re-ordered to so n1 is less than n2 if necessary.
+*           The user input is re-ordered so n1 is less than n2 if necessary.
 *           rand() is seeded with time and then used to generate a random value
 *                within the range set by the user.
 *           The users guesses are counted.
