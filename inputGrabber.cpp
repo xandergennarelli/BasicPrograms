@@ -47,95 +47,16 @@
 *
 */
 
-#include <sstream>
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <string>
 using namespace std;
 
 int main() {
-  //DATA ABSTRACTION
-  int numTests, root, sum, dsum, goal;
-  vector<vector<int>> square;
-  vector<int> numList;
-  stringstream aweOut, magOut;
-  bool magic, awesome;
-
-  //INPUT/PROCESS
-  cin >> numTests;
-
-  for(int test = 0; test < numTests; test++){
-    awesome = true; //awesome until proven not awesome.
-    magic = true;
-    dsum = 0;
-    goal = 0;
-
-    cin >> root;
-    if(root == 0){
-      awesome = false;
-      magic = false;
-    }
-
-    square.clear();
-    square.resize(root);
-    for(int i = 0; i < root; i++){//reads rows and checks row sums (awesome)
-      square.at(i).resize(root);
-      sum = 0;
-      for(int j = 0; j < root; j++){
-        cin >> square.at(i).at(j);
-        sum += square.at(i).at(j);
-      }
-      if(i == 0){
-        goal = sum;
-      }
-      if(goal != sum){
-        awesome = false;
-        magic = false;
-      }
-    } //now have 2d vector of the square
-
-    numList.clear();
-    numList.resize(root * root);
-
-    for(int i = 0; i < root; i++){//checks column sums and calcs diagonal sum
-      sum = 0;                    //and checks if a number is use more than
-      dsum += square.at(i).at(i);       //once. (magic)
-
-      for(int j = 0; j < root; j++){
-        sum += square.at(j).at(i);
-
-        if(find(numList.begin(), numList.end(), square.at(i).at(j))
-           != numList.end()){
-          magic = false;    //checks if the value at square.at(i).at(j) has
-        }                   //been used already in the square.
-        numList.push_back(square.at(i).at(j)); //marks value at current index
-                                               //as used.
-      }
-
-      if(goal !=  sum){
-        magic = false;
-      }
-    }
-    if(dsum != goal){
-      magic = false;
-    }
-
-    if(!awesome){aweOut << "Not ";}
-    aweOut << "Awesome" << endl;
-    if(!magic){magOut << "Not ";}
-    magOut << "Magic" << endl;
+  string out;
+  while(getline(cin, out)){
+    cout << out << endl;
+    out = "";
   }
-
-  //OUTPUT
-
-  cout << aweOut.str() << endl;
-
-  //EXTRA CREDIT
-  cout << "\n*** Start Extra Credit ***\n" << endl;
-
-  cout << magOut.str() << endl;
-
-  cout << "\n*** End Extra Credit ***" << endl;
 
   return 0;
 }
