@@ -79,11 +79,11 @@ int main() {
     square.clear();
     square.resize(root);
     for(int i = 0; i < root; i++){//reads rows and checks row sums (awesome)
-      square.at(i).resize(root);
+      square[i].resize(root);
       sum = 0;
       for(int j = 0; j < root; j++){
-        cin >> square.at(i).at(j);
-        sum += square.at(i).at(j);
+        cin >> square[i][j];
+        sum += square[i][j];
       }
       if(i == 0){
         goal = sum;
@@ -99,16 +99,16 @@ int main() {
 
     for(int i = 0; i < root; i++){//checks column sums and calcs diagonal sum
       sum = 0;                    //and checks if a number is use more than
-      dsum += square.at(i).at(i);       //once. (magic)
+      dsum += square[i][i];       //once. (magic)
 
       for(int j = 0; j < root; j++){
-        sum += square.at(j).at(i);
+        sum += square[j][i];
 
-        if(find(numList.begin(), numList.end(), square.at(i).at(j))
+        if(find(numList.begin(), numList.end(), square[i][j])
            != numList.end()){
-          magic = false;    //checks if the value at square.at(i).at(j) has
+          magic = false;    //checks if the value at square[i][j] has
         }                   //been used already in the square.
-        numList.push_back(square.at(i).at(j)); //marks value at current index
+        numList.push_back(square[i][j]); //marks value at current index
                                                //as used.
       }
 
