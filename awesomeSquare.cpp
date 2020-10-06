@@ -57,7 +57,6 @@ int main() {
   //DATA ABSTRACTION
   int numTests, root, sum, dsum, goal;
   vector<vector<int>> square;
-  vector<int> numList;
   stringstream aweOut, magOut;
   bool magic, awesome;
 
@@ -96,22 +95,14 @@ int main() {
 
     numList.clear();
     numList.resize(root * root);
-
     for(int i = 0; i < root; i++){//checks column sums and calcs diagonal sum
       sum = 0;                    //and checks if a number is use more than
       dsum += square[i][i];       //once. (magic)
 
       for(int j = 0; j < root; j++){
         sum += square[j][i];
-
-        if(find(numList.begin(), numList.end(), square[i][j])
-           != numList.end()){
-          magic = false;    //checks if the value at square[i][j] has
-        }                   //been used already in the square.
-        numList.push_back(square[i][j]); //marks value at current index
-                                               //as used.
+        }
       }
-
       if(goal !=  sum){
         magic = false;
       }
