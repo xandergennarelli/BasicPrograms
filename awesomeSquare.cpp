@@ -56,7 +56,6 @@ using namespace std;
 int main() {
   //DATA ABSTRACTION
   int numTests, root, sum, dsum, goal;
-  vector<vector<int>> square;
   stringstream aweOut, magOut;
   bool magic, awesome;
 
@@ -75,10 +74,8 @@ int main() {
       magic = false;
     }
 
-    square.clear();
-    square.resize(root);
+    int square[root][root];
     for(int i = 0; i < root; i++){//reads rows and checks row sums (awesome)
-      square[i].resize(root);
       sum = 0;
       for(int j = 0; j < root; j++){
         cin >> square[i][j];
@@ -93,8 +90,6 @@ int main() {
       }
     } //now have 2d vector of the square
 
-    numList.clear();
-    numList.resize(root * root);
     for(int i = 0; i < root; i++){//checks column sums and calcs diagonal sum
       sum = 0;                    //and checks if a number is use more than
       dsum += square[i][i];       //once. (magic)
