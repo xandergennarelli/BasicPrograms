@@ -9,11 +9,28 @@
 */
 /*
 * Data Abstraction:
-*
+*           Creates rBeg, rEnd, cBeg, and cEnd to hold values for the first and
+*                 last values of the two list of integers to be multiplied.
+*           Creates rDelta and cDelta, both set to equal 1, to hold the whether
+*                 the list is going from lesser to greater or greater to
+*                 lesser.
+*           Creates rSize and cSize to hold the size of each list of numbers
+*                 being multiplied.
+*           Creates spacing to assist in formatting output with correct amount
+*                 of whitespace.
+*           Creates divider to hold the dividing lines for formatting output.
+*           Creates tableOut to hold the formatted output.
+*           Creates row, col, and table to hold the two lists of numbers to be
+*                 multiplied and the products respectively.
 * Input:
-*
+*           rBeg, rEnd, cBeg, and cEnd are input by the user.
 * Process:
-*
+*           rSize and cSize are calculated.
+*           rDelta and cDelta are calculated.
+*           row is populated.
+*           divider is generated.
+*           The first line of formatted output is pushed to tableOut.
+*           col is populated.
 * Output:
 *
 * Assumptions:
