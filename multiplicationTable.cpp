@@ -27,14 +27,18 @@
 * Process:
 *           rSize and cSize are calculated.
 *           rDelta and cDelta are calculated.
-*           row is populated.
+*           col is populated.
 *           divider is generated.
 *           The first line of formatted output is pushed to tableOut.
-*           col is populated.
+*           row is populated.
+*           The products are calculated, formatted, and pushed to tableOut.
 * Output:
-*
+*           tableOut is printed.
 * Assumptions:
-*
+*           It is assumed that the user inputs correctly.
+*           It is assumed that the user only wants a 2d table.
+*           It is assumed that the user will only wants to find products of
+*                 integers.
 */
 #include <iostream>
 #include <iomanip>
@@ -62,30 +66,30 @@ int main() {
   if(rEnd - rBeg < 0) rDelta = -1;
   if(cEnd - cBeg < 0) cDelta = -1;
 
-  for(int i = 0; i < rSize; i++){
-    row[i] = rBeg + (i * rDelta);
+  for(int i = 0; i < cSize; i++){
+    col[i] = cBeg + (i * cDelta);
 
     spacing = 6;
     if(i == 0){
       tableOut << "       ";
       divider = "-----|";
     }
-    if(row[i] >= 0){
+    if(col[i] >= 0){
       tableOut << " ";
       spacing = 5;
     }
-    tableOut << left << setfill(' ') << setw(spacing) << row[i];
+    tableOut << left << setfill(' ') << setw(spacing) << col[i];
     divider += "-----|";
   }
-  for(int i = 0; i < cSize; i++){
-    col[i] = cBeg + (i * cDelta);
+  for(int i = 0; i < rSize; i++){
+    row[i] = rBeg + (i * rDelta);
   }
 
   tableOut << endl << divider << endl;
   for(int i = 0; i < rSize; i++){
-    tableOut << left << setfill(' ') << setw(8) << col[i];
+    tableOut << left << setfill(' ') << setw(8) << row[i];
     for(int j = 0; j < cSize; j++){
-      table[i][j] = row[i] * col[j];
+      table[i][j] = col[j] * row[i];
       tableOut << left << setfill(' ') << setw(6) << table[i][j];
     }
     tableOut << endl << divider << endl;
