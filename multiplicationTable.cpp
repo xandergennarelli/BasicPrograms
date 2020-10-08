@@ -2,7 +2,9 @@
 * Author: Xander Gennarelli
 * Assignment Title: Multiplication Table
 * Assignment Description:
-*
+*           A program that takes two pairs of integers as input and generates a
+*                 table of the products of the numbers that range between each
+*                 pair.
 * Due Date: 10/7/2020
 * Date Created: 10/6/2020
 * Date Last Modified: 10/7/2020
