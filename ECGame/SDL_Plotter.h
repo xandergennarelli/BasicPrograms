@@ -33,6 +33,7 @@ const int GREEN_SHIFT = 256;
 const int BLUE_SHIFT  = 1;
 const int ALPHA_SHIFT = 16777216;
 const int WHITE = 255;
+const int BLACK = 0;
 const int MAX_THREAD = 100;
 
 //Threaded Sound Function
