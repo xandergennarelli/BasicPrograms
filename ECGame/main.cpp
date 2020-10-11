@@ -5,7 +5,7 @@
 #include "SDL_Plotter.h"
 using namespace std;
 
-enum Color {WHT, BLK, RED, GRN, BLU, YEL};
+enum Color {WHT, BLK, RED, GRN, BLU, YEL, MAG};
 
 int main(int argc, char** argv){
   SDL_Plotter g(1000, 1000, true);
@@ -34,5 +34,6 @@ void draw(SDL_Plotter g, int x, int y, Color c){
     case GRN: g.plotPixel(x, y, 25, 255, 25); break;
     case BLU: g.plotPixel(x, y, 25, 25, 255); break;
     case YEL: g.plotPixel(x, y, 255, 255, 25); break;
+    case MAG: g.plotPixel(x, y, 255, 0, 255); break;
   }
 }
