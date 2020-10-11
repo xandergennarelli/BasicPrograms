@@ -44,7 +44,6 @@
 *           End extra credit is printed.
 * Assumptions:
 *           It is assumed that the user will correctly input.
-*
 */
 
 #include <sstream>
