@@ -73,8 +73,5 @@ int main(){
       cout << endl;
     }
   }
-  //OUTPUT
-
-
   return 0;
 }
