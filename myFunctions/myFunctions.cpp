@@ -6,7 +6,7 @@
 *                 separate driver, implementation, and header files.
 * Due Date: 10/30/2020
 * Date Created: 10/28/2020
-* Date Last Modified: 10/28/2020
+* Date Last Modified: 10/29/2020
 */
 
 #include "myFunctions.h"
@@ -53,7 +53,7 @@ int min(int m[], int n){
   int minVal;
   for (int i = 0; i < n; i++){
     if (i == 0) minVal = m[i];
-    if (m[i] > minVal) minVal = m[i];
+    if (m[i] < minVal) minVal = m[i];
   }
   return minVal;
 }
@@ -62,7 +62,7 @@ double min(double m[], int n){
   double minVal;
   for (int i = 0; i < n; i++){
     if (i == 0) minVal = m[i];
-    if (m[i] > minVal) minVal = m[i];
+    if (m[i] < minVal) minVal = m[i];
   }
   return minVal;
 }
@@ -78,7 +78,7 @@ double absoluteValue(double n){
 }
 
 double factorial(int n){
-  double f = 0;
+  double f = 1;
   if (n > 0){
     f = static_cast<double>(n);
     for (int i = n - 1; i > 1; i--){
