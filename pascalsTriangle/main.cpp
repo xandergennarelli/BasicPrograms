@@ -9,15 +9,24 @@
 */
 /*
 * Data Abstraction:
-*           Yeah Yeah Yeah Lemme Test My Code!!
+*           Creates n and spacing to hold values for the size of the triangle
+*                 and the amount of spacing before each printed line.
+*           Creates ssOut to hold all formatted output.
 * Input:
-*           Yeah Yeah Yeah Lemme Test My Code!!
+*           The user enters the desired size of the triangle.
 * Process:
-*           Yeah Yeah Yeah Lemme Test My Code!!
+*           The amount of pre-line spacing is calculated based on what line of
+*                 the triangle is being calculated.
+*           That spacing is stored in a string stream.
+*           The next value of the triangle is calculated based on the line and
+*                 the number of previous values calculated on that line.
+*           The value is stored in a string stream left justified with spacing.
 * Output:
-*           Yeah Yeah Yeah Lemme Test My Code!!
+*           The string stream is printed.
 * Assumptions:
-*           Yeah Yeah Yeah Lemme Test My Code!!
+*           It is assumed the user only inputs positive integers that comply
+*                 the factorial and combination functions.
+*           It is assumed the user will input correctly.
 */
 
 #include "myFunctions.h"
@@ -28,26 +37,42 @@ using namespace std;
 
 int main() {
   //DATA ABSTRACTION
-  int n;
+  int n, spacing;
   stringstream ssOut;
 
   //INPUT
   cout << "Please Enter The Number of Rows: ";
   cin >> n;
-  cout << n << endl; //Echo Print
+  cout << n << "\n" << endl; //Echo Print
 
+  //PROCESS
   for (int i = 0; i < n; i++){
-    ssOut << setfill(' ') << setw();
+    spacing = 4 * (n - i);
+    ssOut << setfill(' ') << setw(spacing) << ' ';
     for (int j = 0; j <= i; j++){
-      ssOut << setfill(' ') << setw(8) << combination(i, j);
+      ssOut << setfill(' ') << setw(8) << left << combination(i, j);
     }
     ssOut << endl;
   }
 
+  //OUTPUT
+  cout << ssOut.str();
 
-  cout << "\n*** Start Extra Credit ***\n" << endl;
+  //EXTRA CREDIT
+  cout << "\n\n*** Start Extra Credit ***\n" << endl;
 
+  ssOut.clear();
+  ssOut.str("");
+  for (int i = n - 1; i >= 0; i--){
+    spacing = 4 * (n - i);
+    ssOut << setfill(' ') << setw(spacing) << ' ';
+    for (int j = 0; j <= i; j++){
+      ssOut << setfill(' ') << setw(8) << left << combination(i, j);
+    }
+    ssOut << endl;
+  }
 
+  cout << ssOut.str();
 
   cout << "\n*** End Extra Credit ***" << endl;
 
