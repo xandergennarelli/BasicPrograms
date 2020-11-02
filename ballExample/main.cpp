@@ -30,3 +30,4 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
+// clang++ main.cpp ball.cpp SDL_Plotter.cpp -std=c++11 -g -lglfw -lGL -lGLU -lSDL2 -lSDL2_mixer -I/usr/include/SDL2 && ./a.out && rm a.out
