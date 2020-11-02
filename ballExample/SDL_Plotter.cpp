@@ -40,7 +40,7 @@ SDL_Plotter::SDL_Plotter(int r, int c, bool WITH_SOUND){
 
 	SDL_Init(SDL_INIT_AUDIO);
 
-    window   = SDL_CreateWindow("B.S.R!",
+    window   = SDL_CreateWindow("SDL2 Pixel Drawing",
     		                     SDL_WINDOWPOS_UNDEFINED,
     		                     SDL_WINDOWPOS_UNDEFINED, col, row, 0);
 
@@ -52,7 +52,7 @@ SDL_Plotter::SDL_Plotter(int r, int c, bool WITH_SOUND){
 
     pixels   = new Uint32[col * row];
 
-    memset(pixels, BLACK, col * row * sizeof(Uint32));
+    memset(pixels, WHITE, col * row * sizeof(Uint32));
 
     //SOUND Thread Pool
     Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 );
