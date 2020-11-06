@@ -11,12 +11,12 @@
 #include "Sphere.h"
 
 Sphere::Sphere(){
-   radius = 1;
-   color = "green";
+  radius = 1;
+  color = "green";
 }
 Sphere::Sphere(double r){
-   radius = r;
-   color = "green";
+  radius = r;
+  color = "green";
 }
 Sphere::Sphere(double r, string c){
   radius = r;
