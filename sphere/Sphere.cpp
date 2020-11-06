@@ -46,6 +46,6 @@ double Sphere::volume() const{
 
 bool Sphere::isEqual(const Sphere other) const{
   bool x = false;
-    if (radius == other.getRadius() && color == other.getColor()) x = true;
+  if (radius == other.getRadius() && color == other.getColor()) x = true;
   return x;
 }
