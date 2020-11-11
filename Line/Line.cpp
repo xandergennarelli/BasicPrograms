@@ -59,6 +59,7 @@ bool Line::isParallel(Line a) const{
     if (m == mA) isP = true;
   }
   if (!slope(m) && !a.slope(mA)) isP = true;
+  
   return isP;
 }
 bool Line::isCollinear(Line a) const{
@@ -90,9 +91,9 @@ Point Line::intersect(Line a) const{
   else {
     yIntercept(b);
     a.yIntercept(bA);
-    x = (b - bA) / (m - mA);
+    x = (bA - b) / (m - mA);
   }
-  y = m * x - b;
+  y = (m * x) + b;
   i.x = x;
   i.y = y;
 
