@@ -46,5 +46,6 @@ int main()
     cout << "Count   = " << count << endl;
     cout << "Sum     = " << sum << endl;
     cout << "Average = " << average << endl;
+    
     return 0;
 }
