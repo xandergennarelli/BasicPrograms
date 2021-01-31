@@ -1,0 +1,18 @@
+Pointer Arithmetic
+---------------------
+int *a;        a++;    1000 + 1 -> 1004
+char *b;       b++;    1000 + 1 -> 1001
+short *c;      c++;    1000 + 1 -> 1002
+double *d;     d++;    1000 + 1 -> 1008
+when a pointer has 1 added to it, it moves by the size of the type
+
+float f = 3.14159, *fptr = &f;
+float *fptr2 = fptr + 3;
+
+cout << (long) fptr2 - (long) fptr << endl;
+cout << fptr2 - fptr << endl;
+
+prints: "
+  12
+  3
+"
