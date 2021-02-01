@@ -15,6 +15,20 @@
 
 using namespace std;
 
+/*
+* bubbleSort
+*
+* This function sorts a given array of pointers of a given size.
+*
+* Parameters:
+*     array: the array of pointers to be sorted
+*     size: the number of pointers in the array
+*
+* Output:
+*     return: none
+*     reference parameters: array, now sorted
+*     streams: none
+*/
 void bubbleSort(int *array, int size){
   for (int i = 0; i < size - 1; i++)
     for (int j = 0; j < size - 1; j++)
@@ -22,6 +36,20 @@ void bubbleSort(int *array, int size){
         swap(array[j], array[j+1]);
 }
 
+/*
+* largestValue
+*
+* This function returns the largest value from an array of pointers.
+*
+* Parameters:
+*     array: the array of pointers to be checked
+*     size: the number of pointers in the array
+*
+* Output:
+*     return: the largest value pointed to by the array
+*     reference parameters: array
+*     streams: none
+*/
 int largestValue(int *array, int size){
   int max = *array;
 
@@ -33,6 +61,20 @@ int largestValue(int *array, int size){
   return max;
 }
 
+/*
+* smallestValue
+*
+* This function returns the smallest value from an array of pointers.
+*
+* Parameters:
+*     array: the array of pointers to be checked
+*     size: the number of pointers in the array
+*
+* Output:
+*     return: the smallest value pointed to by the array
+*     reference parameters: array
+*     streams: none
+*/
 int smallestValue(int *array, int size){
   int min = *array;
 
@@ -44,6 +86,20 @@ int smallestValue(int *array, int size){
   return min;
 }
 
+/*
+* averageValue
+*
+* This function returns the average value of an array of pointers.
+*
+* Parameters:
+*     array: the array of pointers to be checked
+*     size: the number of pointers in the array
+*
+* Output:
+*     return: the average of all values pointed to by the array
+*     reference parameters: array
+*     streams: none
+*/
 double averageValue(int *array, int size){
   int sum = 0;
   double avg = 0;
@@ -56,9 +112,24 @@ double averageValue(int *array, int size){
   return avg;
 }
 
+/*
+* medianValue
+*
+* This function returns the median value of an array of pointers.
+* The array is sorted to find this value.
+*
+* Parameters:
+*     array: the array of pointers to be checked
+*     size: the number of pointers in the array
+*
+* Output:
+*     return: the median value pointed to by the array
+*     reference parameters: array, now sorted
+*     streams: none
+*/
 int medianValue(int *array, int size){
   bubbleSort(array, size);
-  int med_index = size / 2;
+  int med_index = (size - 1) / 2;
   int med_val = *(array + med_index);
 
   return med_val;
