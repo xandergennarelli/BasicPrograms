@@ -26,7 +26,7 @@ public:
   MyString();
   MyString(const char *);
   ~MyString();
-  MyString(const MyString &);
+  MyString(const MyString&);
 
   MyString& operator = (const MyString&);
   bool operator == (const MyString&) const;
