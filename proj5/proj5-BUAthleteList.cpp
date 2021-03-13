@@ -10,3 +10,11 @@
 -
 -  Implementation of functions defined in proj5-BUAthleteList.hpp
 */
+
+#include "proj5-BUAthleteList.hpp"
+
+BUAthleteList::BUAthleteList(){
+  this->list = new BUAthlete[2];
+  this->capacity = 2;
+  this->size = 0;
+}

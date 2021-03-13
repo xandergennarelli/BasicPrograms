@@ -13,7 +13,7 @@
 
 #include "proj5-BUAthlete.hpp"
 #include <sstream>
-/**
+
 BUAthlete::BUAthlete(){
   this->athleteID = 0;
   this->athleteName = "no_name";
@@ -22,7 +22,7 @@ BUAthlete::BUAthlete(){
   this->evaluation = 0;
   this->position = 0;
 }
-**/
+
 void BUAthlete::setEvaluation(int eval){
   this->evaluation = eval;
 }

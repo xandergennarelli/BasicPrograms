@@ -38,6 +38,25 @@ protected:
   void resizeArray();
 
 public:
+  BUAthleteList();
+  BUAthleteList(const BUAthleteList& other);
+  ~BUAthleteList();
+
+  /**
+   * operator =
+   *
+   * overloaded copy assignment operator for the BUAthleteList class
+   *
+   * Parameters:
+   *      other: reference to the BUAthleteList instance to be copied
+   *
+   * Output:
+   *      return: a reference to a BUAthleteList instance
+   *      reference parameters: none
+   *      stream: none
+   */
+  BUAthleteList& operator = (const BUAthleteList& other)
+
   /**
    * addNCAAAthlete
    *

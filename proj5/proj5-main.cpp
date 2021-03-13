@@ -15,7 +15,7 @@
 #include "proj5-BUAthleteList.hpp"
 
 int main(){
+  BUAthleteList list = BUAthleteList();
 
-  
   return 0;
 }
