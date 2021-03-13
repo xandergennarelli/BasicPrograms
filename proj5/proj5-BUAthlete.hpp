@@ -25,6 +25,24 @@ protected:
   Position position;
 
 public:
+  BUAthlete();
+  BUAthlete(const BUAthlete& other);
+
+  /**
+   * operator =
+   *
+   * overloaded copy assignment operator for the BUAthlete class
+   *
+   * Parameters:
+   *      other: reference to the BUAthlete instance to be copied
+   *
+   * Output:
+   *      return: a reference to a BUAthlete instance
+   *      reference parameters: none
+   *      stream: none
+   */
+  BUAthlete& operator = (const BUAthlete& other);
+
   /**
    * setEvaluation
    *
