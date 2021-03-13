@@ -8,5 +8,5 @@
 -  Date Modified: 03/12/2021
 -    - File Created
 -
--  ### Description ###
+-  Tests all written functions independently.
 */

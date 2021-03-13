@@ -93,7 +93,7 @@ public:
     /**
      * getID
      *
-     * getId returns a copy of the athleteID data memeber
+     * getId returns a copy of the athleteID data member
      *
      * Parameters:  none
      *
@@ -107,7 +107,7 @@ public:
     /**
      * getName
      *
-     * getName returns a copy of the athleteName data memeber
+     * getName returns a copy of the athleteName data member
      *
      * Parameters: none
      *
@@ -121,7 +121,7 @@ public:
     /**
      * getSchool
      *
-     * getSchool returns a copy of the schoolChoice data memeber
+     * getSchool returns a copy of the schoolChoice data member
      *
      * Parameters: none
      *
@@ -135,7 +135,7 @@ public:
     /**
      * getLOI
      *
-     * getLOI returns a copy of the athleteLOI data memeber
+     * getLOI returns a copy of the athleteLOI data member
      *
      * Parameters: none
      *

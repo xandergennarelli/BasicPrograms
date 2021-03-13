@@ -8,5 +8,5 @@
 -  Date Modified: 03/12/2021
 -    - File Created
 -
--  ### Description ###
+-  Implementation of functions defined in proj5-BUAthleteList.hpp
 */

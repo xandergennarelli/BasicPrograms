@@ -8,5 +8,43 @@
 -  Date Modified: 03/12/2021
 -    - File Created
 -
--  ### Description ###
+-  Implementation of functions defined in proj5-BUAthlete.hpp
 */
+
+#include "proj5-BUAthlete.hpp"
+#include <sstream>
+/**
+BUAthlete::BUAthlete(){
+  this->athleteID = 0;
+  this->athleteName = "no_name";
+  this->schoolChoice = "no_school";
+  this->athleteLOI = false;
+  this->evaluation = 0;
+  this->position = 0;
+}
+**/
+void BUAthlete::setEvaluation(int eval){
+  this->evaluation = eval;
+}
+
+void BUAthlete::setPosition(Position pos){
+  this->position = pos;
+}
+
+int BUAthlete::getEvaluation(){
+  return this->evaluation;
+}
+
+Position BUAthlete::getPosition(){
+  return this->position;
+}
+
+string BUAthlete::toString(){
+  ostringstream out;
+
+  out << this->NCAAAthlete::toString();
+  out << "Evaluation: " << this->evaluation << endl;
+  out << "Position: " << this->position << endl;
+
+  return out.str();
+}

@@ -5,7 +5,7 @@
 //  Created by Aars Matthew on 2/12/18.
 //
 
-#include "proj6-NCAAAthlete.hpp"
+#include "proj5-NCAAAthlete.hpp"
 #include <sstream>
 
 void NCAAAthlete::setID(int id){

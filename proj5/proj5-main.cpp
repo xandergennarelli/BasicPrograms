@@ -10,3 +10,12 @@
 -
 -  ### Description ###
 */
+// clang++ proj5-main.cpp proj5-NCAAAthlete.cpp proj5-BUAthlete.cpp proj5-BUAthleteList.cpp && ./a.out && rm a.out
+
+#include "proj5-BUAthleteList.hpp"
+
+int main(){
+
+  
+  return 0;
+}
