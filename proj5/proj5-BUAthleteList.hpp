@@ -55,7 +55,7 @@ public:
    *      reference parameters: none
    *      stream: none
    */
-  BUAthleteList& operator = (const BUAthleteList& other)
+  BUAthleteList& operator = (const BUAthleteList& other);
 
   /**
    * addNCAAAthlete

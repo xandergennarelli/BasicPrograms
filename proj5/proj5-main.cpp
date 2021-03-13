@@ -16,6 +16,7 @@
 
 int main(){
   BUAthleteList list = BUAthleteList();
+  BUAthlete a = BUAthlete();
 
   return 0;
 }

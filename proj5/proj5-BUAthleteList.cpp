@@ -18,3 +18,31 @@ BUAthleteList::BUAthleteList(){
   this->capacity = 2;
   this->size = 0;
 }
+
+BUAthleteList::BUAthleteList(const BUAthleteList& other){
+  this->list = new BUAthlete[other.capacity];
+  this->capacity = other.capacity;
+  this->size = other.size;
+
+  for (int i = 0; i < other.size; i++){
+    this->list[i] = other.list[i];
+  }
+}
+
+BUAthleteList::~BUAthleteList(){
+  delete [] this->list;
+  list = NULL;
+}
+
+BUAthleteList& BUAthleteList::operator = (const BUAthleteList& other){
+  delete [] this->list;
+  this->list = new BUAthlete[other.capacity];
+  this->capacity = other.capacity;
+  this->size = other.size;
+
+  for (int i = 0; i < other.size; i++){
+    this->list[i] = other.list[i];
+  }
+
+  return *this;
+}

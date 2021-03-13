@@ -7,6 +7,7 @@
 -
 -  Date Modified: 03/12/2021
 -    - File Created
+-    - Implemtend functions
 -
 -  Implementation of functions defined in proj5-BUAthlete.hpp
 */
@@ -20,7 +21,27 @@ BUAthlete::BUAthlete(){
   this->schoolChoice = "no_school";
   this->athleteLOI = false;
   this->evaluation = 0;
-  this->position = 0;
+  this->position = OL;
+}
+
+BUAthlete::BUAthlete(const BUAthlete& other){
+  this->athleteID = other.athleteID;
+  this->athleteName = other.athleteName;
+  this->schoolChoice = other.schoolChoice;
+  this->athleteLOI = other.athleteLOI;
+  this->evaluation = other.evaluation;
+  this->position = other.position;
+}
+
+BUAthlete& BUAthlete::operator = (const BUAthlete& other){
+  this->athleteID = other.athleteID;
+  this->athleteName = other.athleteName;
+  this->schoolChoice = other.schoolChoice;
+  this->athleteLOI = other.athleteLOI;
+  this->evaluation = other.evaluation;
+  this->position = other.position;
+
+  return *this;
 }
 
 void BUAthlete::setEvaluation(int eval){
