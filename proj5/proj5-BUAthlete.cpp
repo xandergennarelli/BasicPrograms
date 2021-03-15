@@ -13,7 +13,6 @@
 */
 
 #include "proj5-BUAthlete.hpp"
-#include <sstream>
 
 BUAthlete::BUAthlete(){
   this->athleteID = 0;
@@ -65,7 +64,42 @@ string BUAthlete::toString(){
 
   out << this->NCAAAthlete::toString();
   out << "Evaluation: " << this->evaluation << endl;
-  out << "Position: " << this->position << endl;
+  out << "Position: ";
+  switch (this->position) {
+    case OL:
+      out << "OL";
+      break;
+    case QB:
+      out << "QB";
+      break;
+    case RB:
+      out << "RB";
+      break;
+    case WR:
+      out << "WR";
+      break;
+    case TE:
+      out << "TE";
+      break;
+    case DL:
+      out << "DL";
+      break;
+    case DE:
+      out << "DE";
+      break;
+    case LB:
+      out << "LB";
+      break;
+    case CB:
+      out << "CB";
+      break;
+    case S:
+      out << "S";
+      break;
+    default:
+      out << "K";
+  }
+  out << endl;
 
   return out.str();
 }

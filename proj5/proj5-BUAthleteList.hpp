@@ -187,4 +187,74 @@ public:
   string toString();
 };
 
+/**
+ * xxx
+ *
+ * xxx
+ *
+ * Parameters: none
+ *
+ * Output:
+ *      return: none
+ *      reference parameters: none
+ *      stream: none
+ */
+void swapBUA(BUAthlete *list, int a, int b);
+
+/**
+ * xxx
+ *
+ * xxx
+ *
+ * Parameters: none
+ *
+ * Output:
+ *      return: none
+ *      reference parameters: none
+ *      stream: none
+ */
+void quicksortByID(BUAthlete *list, int low, int high);
+
+/**
+ * xxx
+ *
+ * xxx
+ *
+ * Parameters: none
+ *
+ * Output:
+ *      return: none
+ *      reference parameters: none
+ *      stream: none
+ */
+int partitionByID(BUAthlete *list, int low, int high);
+
+/**
+ * xxx
+ *
+ * xxx
+ *
+ * Parameters: none
+ *
+ * Output:
+ *      return: none
+ *      reference parameters: none
+ *      stream: none
+ */
+void quicksortByEvaluation(BUAthlete *list, int low, int high);
+
+/**
+ * xxx
+ *
+ * xxx
+ *
+ * Parameters: none
+ *
+ * Output:
+ *      return: none
+ *      reference parameters: none
+ *      stream: none
+ */
+int partitionByEvaluation(BUAthlete *list, int low, int high);
+
 #endif

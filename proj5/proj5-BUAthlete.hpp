@@ -16,6 +16,9 @@
 #define BUATHLETE_H
 
 #include "proj5-NCAAAthlete.hpp"
+#include <sstream>
+
+using namespace std;
 
 enum Position {OL, QB, RB, WR, TE, DL, DE, LB, CB, S, K};
 
