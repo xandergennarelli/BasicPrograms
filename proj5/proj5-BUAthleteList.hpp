@@ -188,11 +188,15 @@ public:
 };
 
 /**
- * xxx
+ * swapBUA
  *
- * xxx
+ * swaps the position of two BUAthletes in the passed pointer array
  *
- * Parameters: none
+ * Parameters:
+ *      list: pointer to an array of BUAthletes where objects being swapped are
+ *                stored
+ *      a: index in list of the first BUAthlete
+ *      b: index in list of the second BUAthlete
  *
  * Output:
  *      return: none
@@ -202,11 +206,14 @@ public:
 void swapBUA(BUAthlete *list, int a, int b);
 
 /**
- * xxx
+ * quicksortByID
  *
- * xxx
+ * recursive implementation of quicksort comparing athleteID values
  *
- * Parameters: none
+ * Parameters:
+ *      list: pointer to an array of BUAthletes being sorted
+ *      low: index in list of the low end of a partition
+ *      high: index in list of the high end of a partition
  *
  * Output:
  *      return: none
@@ -216,25 +223,33 @@ void swapBUA(BUAthlete *list, int a, int b);
 void quicksortByID(BUAthlete *list, int low, int high);
 
 /**
- * xxx
+ * partitionByID
  *
- * xxx
+ * helper partitioning function for quicksortByID that splits a larger pointer
+ *    array into halves around a pivot point and partially sorts it by
+ *    athleteID.
  *
- * Parameters: none
+ * Parameters:
+ *      list: pointer to an array of BUAthletes being sorted
+ *      low: index in list of the low end of a partition
+ *      high: index in list of the high end of a partition
  *
  * Output:
- *      return: none
+ *      return: the highest index in the low partition
  *      reference parameters: none
  *      stream: none
  */
 int partitionByID(BUAthlete *list, int low, int high);
 
 /**
- * xxx
+ * quicksortByEvaluation
  *
- * xxx
+ * recursive implementation of quicksort comparing evaluation values
  *
- * Parameters: none
+ * Parameters:
+ *      list: pointer to an array of BUAthletes being sorted
+ *      low: index in list of the low end of a partition
+ *      b: index in list of the high end of a partition
  *
  * Output:
  *      return: none
@@ -244,14 +259,19 @@ int partitionByID(BUAthlete *list, int low, int high);
 void quicksortByEvaluation(BUAthlete *list, int low, int high);
 
 /**
- * xxx
+ * partitionByEvaluation
  *
- * xxx
+ * helper partitioning function for quicksortByEvaluation that splits a larger
+ *    pointer array into halves around a pivot point and partially sorts it by
+ *    evaluation.
  *
- * Parameters: none
+ * Parameters:
+ *      list: pointer to an array of BUAthletes being sorted
+ *      low: index in list of the low end of a partition
+ *      high: index in list of the high end of a partition
  *
  * Output:
- *      return: none
+ *      return: the highest index in the low partition
  *      reference parameters: none
  *      stream: none
  */

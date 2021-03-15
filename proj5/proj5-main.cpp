@@ -88,7 +88,7 @@ int main(){
   list.sortByEvaluation();
   list.sortByPosition();
 
-  pos = list[0].getPosition();
+  pos = list[0].getPosition();      // print top two athletes for each position
   for (int i = 0; i < list_size; i++){
     if (pos != list[i].getPosition()){ // when the next position group is being
       pos = list[i].getPosition();     // checked and printed
