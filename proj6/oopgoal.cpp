@@ -29,20 +29,6 @@ void Person::writePerson(ostream &out) {
   out << age << endl;
 }
 
-void requestInfo(ostream &out, string msg) {
-  out << msg << endl;
-}
-
-string readAgain(ostream &out, istream &in) {
-  string choice;
-
-  out << "Do you want to read in another person (yes/no)? " << endl;
-  in >> choice;
-  in.ignore(3, '\n');
-
-  return choice;
-}
-
 class Customer : public Person {
 protected:
   double shippingRate;
@@ -87,6 +73,20 @@ void MegaCustomer::readPerson( istream & in ) {
   Person::readPerson(in);
 }
 
+void requestInfo(ostream &out, string msg) {
+  out << msg << endl;
+}
+
+string readAgain(ostream &out, istream &in) {
+  string choice;
+
+  out << "Do you want to read in another person (yes/no)? " << endl;
+  in >> choice;
+  in.ignore(3, '\n');
+
+  return choice;
+}
+
 int findPerson(Person *pList[], string name) {
   int pos = -1, index = 0;
 
@@ -106,13 +106,12 @@ int main() {
   int index = 0;
   bool fileRead = false;
   ifstream pfile;
-  ofstream opfile;
 
   cout << "Would you like to read the data from a file (yes/no)? " << endl;
   cin >> choice;
   cin.ignore(3, '\n');
 
-  if (choice == "yes") {
+  if (choice == "yes"){
     fileRead = true;
     pfile.open("iperson.txt");
 
@@ -123,7 +122,8 @@ int main() {
     pfile >> pTypeChoice;
     pfile.ignore(3, '\n');
 
-  } else {
+  }
+  else{
     cout << "What type of Person? (person/customer/mega)" << endl;
     cin >> pTypeChoice;
     cin.ignore(3, '\n');
@@ -154,9 +154,8 @@ int main() {
       choice = "no";
     }
   }
-
-  while (choice != "no" && index < PLIST_SIZE) {
-    if (!fileRead) {
+  while (choice != "no" && index < PLIST_SIZE){
+    if (!fileRead){
       requestInfo(cout, msg);
       pList[index]->readPerson(cin);
     }
@@ -164,17 +163,18 @@ int main() {
     pList[index]->writePerson(opfile);
 
     index++;
-    if (!fileRead) {
+    if (!fileRead){
       choice = readAgain(cout, cin);
-    } else {
+    }
+    else{
       pList[index]->readPerson(pfile);
-      if (!pfile) {
+      if (!pfile){
         choice = "no";
       }
     }
   }
 
-  if (fileRead) {
+  if (fileRead){
     pfile.close();
   }
   opfile.close();
@@ -189,10 +189,10 @@ int main() {
     cout << "Couldn't find your person: " << choice << endl;
   }
 
-  for( int i = 0; i < PLIST_SIZE; i++ ){
+  for( int i = 0; i < PLIST_SIZE; i++ ){ //account for pTypeChoice here
     delete pList[i];
   }
-  delete [] pList;
+  delete [] pList; //dont here
 
   return 0;
 }
