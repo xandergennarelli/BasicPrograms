@@ -39,6 +39,7 @@ public:
   T back(); // throws BADINDEX
   T& operator [] (int); // throws BADINDEX
   int getSize();
+  int getCapacity();
   bool isEmpty();
   void erase();
 };
@@ -190,6 +191,7 @@ MyVector<T>& MyVector<T>::pushBack(T item){
 */
 template <class T>
 MyVector<T>& MyVector<T>::popFront(T& item){
+  if (this->size <= 0) throw BADINDEX();
   item = this->data[0];
   this->shiftLeft();
   this->size--;
@@ -220,6 +222,7 @@ MyVector<T>& MyVector<T>::popBack(T& item){
 */
 template <class T>
 T MyVector<T>::front(){
+  if (this->size <= 0) throw BADINDEX();
   return this->data[0];
 }
 
@@ -231,6 +234,7 @@ T MyVector<T>::front(){
 */
 template <class T>
 T MyVector<T>::back(){
+  if (this->size <= 0) throw BADINDEX();
   return this->data[this->size - 1];
 }
 
@@ -242,6 +246,7 @@ T MyVector<T>::back(){
 */
 template <class T>
 T& MyVector<T>::operator [] (int index){
+  if (index >= this->size || index < 0) throw BADINDEX();
   return this->data[index];
 }
 
@@ -254,6 +259,18 @@ T& MyVector<T>::operator [] (int index){
 template <class T>
 int MyVector<T>::getSize(){
   return this->size;
+}
+
+/**
+- description: returns the number of elements allocated in memory for MyVector
+- pre-condition: a object exists
+- post-condition: the MyVector is unchanged
+- return: an integer value representing the number of elements allocated in
+-           memory for the list
+*/
+template <class T>
+int MyVector<T>::getCapacity(){
+  return this->capacity;
 }
 
 /**
