@@ -7,13 +7,14 @@
 -
 -  Date Modified: 03/24/2021
 -    - File Created
--    - Implemented big four, grow(), back(), front(), getSize(), isEmpty(),
--        popBack(), pushBack(), operator []
+-    - Implemented functions and added documentation
 -
 -  xxx
 */
 
 #include "proj7-ContainerIfc.h"
+#include <cstddef>
+using namespace std;
 
 template <class T>
 class MyVector : public ContainerIfc<T> {
@@ -69,7 +70,9 @@ void MyVector<T>::grow(){
 */
 template <class T>
 void MyVector<T>::shiftRight(){
-  //FIXME
+  for (int i = this->size; i > 0; i--){
+    this->data[i] = this->data[i-1];
+  }
 }
 
 /**
@@ -80,7 +83,9 @@ void MyVector<T>::shiftRight(){
 */
 template <class T>
 void MyVector<T>::shiftLeft(){
-  //FIXME
+  for (int i = 0; i < this->size; i++){
+    this->data[i] = this->data[i+1];
+  }
 }
 
 /**
@@ -154,7 +159,12 @@ MyVector<T>& MyVector<T>::operator = (const MyVector& other){
 */
 template <class T>
 MyVector<T>& MyVector<T>::pushFront(T item){
-  //FIXME
+  if (this->size >= this->capacity) this->grow();
+  this->shiftRight();
+  this->data[0] = item;
+  this->size++;
+
+  return *this;
 }
 
 /**
@@ -166,8 +176,8 @@ MyVector<T>& MyVector<T>::pushFront(T item){
 template <class T>
 MyVector<T>& MyVector<T>::pushBack(T item){
   if (this->size >= this->capacity) this->grow();
-  data[this->size] = item;
-  size++;
+  this->data[this->size] = item;
+  this->size++;
 
   return *this;
 }
@@ -180,7 +190,11 @@ MyVector<T>& MyVector<T>::pushBack(T item){
 */
 template <class T>
 MyVector<T>& MyVector<T>::popFront(T& item){
-  //FIXME
+  item = this->data[0];
+  this->shiftLeft();
+  this->size--;
+
+  return *this;
 }
 
 /**
@@ -237,6 +251,7 @@ T& MyVector<T>::operator [] (int index){
 - post-condition: the MyVector is unchanged
 - return: an integer value representing the number of elements in the list
 */
+template <class T>
 int MyVector<T>::getSize(){
   return this->size;
 }
@@ -247,6 +262,7 @@ int MyVector<T>::getSize(){
 - post-condition: the MyVector is unchanged
 - return: true if the MyVector is empty false otherwise
 */
+template <class T>
 bool MyVector<T>::isEmpty(){
   return (this->size <= 0);
 }
@@ -259,5 +275,9 @@ bool MyVector<T>::isEmpty(){
 */
 template <class T>
 void MyVector<T>::erase(){
-  //FIXME
+  this->size = 0;
+  this->capacity = 5;
+
+  delete [] this->data;
+  this->data = new T[5];
 }
