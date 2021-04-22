@@ -1,42 +1,32 @@
-/**
--  file: proj9-MyList.h
--  author: Xander Gennarelli
--  course: CSI 1440
--  assignment: Project 9
--  due date: 04/12/2021
--
--  Date Modified: 04/10/2021
--    - File Created
--
--  Linked List implementation class.
-*/
+#ifndef MYLIST_H
+#define MYLIST_H
 
-#include "proj9-ContainerIfc.h"
-#include "proj9-Node.h"
+#include “proj10-ContainerIfc.h”
+#include “proj10-Node.h”
 #include <cstddef>
-#include <iostream>
 using namespace std;
 
 template <class T>
-class MyList : public ContainerIfc<T> {
-	protected:
-		Node<T> *head;
+class MyList : public ContainerIfc <T> {
+private:
+  Node<T> *head;
+  Node<T> *tail;
 
-	public:
-		MyList();
-		~MyList();
-		MyList(const MyList&);
-		MyList<T>& operator = (const MyList&);
-		MyList<T>& pushFront(T);
-		MyList<T>& pushBack(T);
-		MyList<T>& popFront(T&);
-		MyList<T>& popBack(T&);
-		int getSize();
-		bool isEmpty();
-		T front();
-		T back();
-		T& operator [](int);
-		void erase();
+public:
+  MyList();
+  ~MyList();
+  MyList(const MyList &);
+  MyList<T>& operator = (const MyList &);
+  MyList<T>& pushFront(T);
+  MyList<T>& pushBack(T);
+  MyList<T>& popFront(T&); // throws BADINDEX
+  MyList<T>& popBack(T&);  // throws BADINDEX
+  int getSize();
+  bool isEmpty();
+  T front();      // throws BADINDEX
+  T back();      // throws BADINDEX
+  T& operator [] (int); // throws BADINDEX
+  void erase();
 };
 
 /**
@@ -48,6 +38,7 @@ class MyList : public ContainerIfc<T> {
 template <class T>
 MyList<T>::MyList(){
   this->head = nullptr;
+  this->tail = nullptr;
 }
 
 /**
@@ -63,6 +54,7 @@ MyList<T>::~MyList(){
     this->head = this->head->next;
     delete temp;
   }
+  this->tail = this->head;
   temp = nullptr;
 }
 
@@ -81,6 +73,7 @@ MyList<T>::MyList(const MyList& other){
     while (temp != nullptr){
       curr->next = new Node<T>(temp->data);
       curr = curr->next;
+      this->tail = curr;
       temp = temp->next;
     }
     curr = nullptr;
@@ -88,6 +81,7 @@ MyList<T>::MyList(const MyList& other){
   }
   else{
     this->head = nullptr;
+    this->tail = nullptr;
   }
 }
 
@@ -108,6 +102,7 @@ MyList<T>& MyList<T>::operator = (const MyList& other){
       while (temp != nullptr){
         curr->next = new Node<T>(temp->data);
         curr = curr->next;
+        this->tail = curr;
         temp = temp->next;
       }
       temp = nullptr;
@@ -115,6 +110,7 @@ MyList<T>& MyList<T>::operator = (const MyList& other){
     }
     else{
       this->head = nullptr;
+      this->tail = nullptr;
     }
   }
 
@@ -130,7 +126,10 @@ MyList<T>& MyList<T>::operator = (const MyList& other){
 */
 template <class T>
 MyList<T>& MyList<T>::pushFront(T value){
-  if (this->isEmpty()) this->head = new Node<T>(value);
+  if (this->isEmpty()){
+    this->head = new Node<T>(value);
+    this->tail = this->head;
+  }
   else{
     Node<T> *temp = this->head;
     this->head = new Node<T>(value);
@@ -151,14 +150,13 @@ MyList<T>& MyList<T>::pushFront(T value){
 */
 template <class T>
 MyList<T>& MyList<T>::pushBack(T value){
-  if (this->isEmpty()) this->head = new Node<T>(value);
+  if (this->isEmpty()){
+    this->head = new Node<T>(value);
+    this->tail = this->head;
+  }
   else{
-    Node<T> *temp = this->head;
-    while (temp->next != nullptr){
-      temp = temp->next;
-    }
-    temp->next = new Node<T>(value);
-    temp = nullptr;
+    this->tail->next = new Node<T>(value);
+    this->tail = this->tail->next;
   }
 
   return *this;
@@ -181,8 +179,9 @@ MyList<T>& MyList<T>::popFront(T& value){
   value = this->head->data;
   this->head = temp->next;
   delete temp;
-
   temp = nullptr;
+  if (this->isEmpty()) this->tail = this->head;
+
   return *this;
 }
 
@@ -201,8 +200,10 @@ MyList<T>& MyList<T>::popBack(T& value){
   if (this->isEmpty()) throw BADINDEX();
   if (this->head->next == nullptr){
     value = this->head->data;
+
     delete this->head;
     this->head = nullptr;
+    this->tail = nullptr;
   }
   else{
     Node<T> *temp = this->head;
@@ -210,8 +211,11 @@ MyList<T>& MyList<T>::popBack(T& value){
       temp = temp->next;
     }
     value = temp->next->data;
+    this->tail = temp;
+
     delete temp->next;
     temp->next = nullptr;
+    temp = nullptr;
   }
 
   return *this;
@@ -266,14 +270,7 @@ T MyList<T>::front(){
 template <class T>
 T MyList<T>::back(){
   if (this->isEmpty()) throw BADINDEX();
-  Node<T> *temp = this->head;
-  while (temp->next != nullptr){
-    temp = temp->next;
-  }
-  T value = temp->data;
-
-  temp = nullptr;
-  return value;
+  return this->tail->data;
 }
 
 /**
@@ -308,6 +305,9 @@ void MyList<T>::erase(){
       this->head = this->head->next;
       delete temp;
     }
+    this->tail = this->head;
     temp = nullptr;
   }
 }
+
+#endif
